@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Robotron 2000</title>
+
+    <style>
+        body {
+            background: #f4f4f4;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        .container {
+            background: white;
+            padding: 20px;
+            width: 340px;
+            margin: auto;
+            border-radius: 10px;
+            box-shadow: 0 0 10px #0002;
+        }
+
+        img {
+            width: 260px;
+        }
+
+        button {
+            margin: 10px;
+            padding: 10px 18px;
+            font-size: 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Robotron 2000 – Trocar Cor</h1>
+
+    <div class="container">
+        <img id="robotron" src="img/robotron-amarelo.png">
+
+        <div>
+            <button onclick="trocarCor(-1)">&lt;</button>
+            <button onclick="trocarCor(1)">&gt;</button>
+        </div>
+    </div>
+
+    <script>
+        // Lista das imagens do robô
+        const cores = [
+            "robotron-amarelo.png",
+            "robotron-azul.png",
+            "robotron-branco.png",
+            "robotron-preto.png",
+            "robotron-rosa.png",
+            "robotron-vermelho.png"
+        ];
+
+        let indice = 0;
+
+        function trocarCor(direcao) {
+            indice += direcao;
+
+            if (indice < 0) indice = cores.length - 1;
+            if (indice >= cores.length) indice = 0;
+
+            document.getElementById("robotron").src = "img/" + cores[indice];
+        }
+    </script>
+
+</body>
+</html>
