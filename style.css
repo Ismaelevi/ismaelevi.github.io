@@ -114,17 +114,24 @@ main {
 }
 
 .controle-ajuste {
-    display: inline-block;
-    width: 40px;
-    height: 40px;
-    line-height: 44px;
-    border-radius: 50%;
-    color: var(--main-cinza);
-    font-size: 4em;
-    background: var(--main-preto);
-    text-align: center;
-    border: 3px solid var(--main-cinza);
-    cursor: pointer;
+   display: inline-flez;
+   justify-content: center;
+   align-items: center;
+    
+   width: 40px;
+   height: 40px;
+   border-radius: 50%;
+    
+   background: var(--main-preto);
+   border: 3px solid var(--main-cinza);
+   color: var(--main-cinza); 
+   font-size: 3em;
+   cursor: pointer;
+
+   line-height: 0;
+   padding: 0; 
+   padding-bottom: 6px;
+   transform: translateY(0); 
 }
 
 .linha {
@@ -232,59 +239,3 @@ main {
     }
 }
 
-/****************************************** Troca Robô *****/
-
-.producao-container {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    gap: 15px;
-    width: 100%;
-    padding-right: 10px;
-    box-sizing: border-box;
-}
-
-.producao-container .producao {
-    font-size: 2em;
-    text-transform: uppercase;
-    padding: 0.2em 1em;
-    border: 3px solid var(--main-branco);
-    background: var(--main-branco);
-    clip-path: polygon(100% 0, 100% calc(100% - 30px), calc(100% - 30px) 100%, 0 100%, 0 0);
-    cursor: pointer;
-}
-
-.producao-container .producao:hover {
-    background: var(--main-preto);
-    color: var(--main-branco);
-}
-
-/* Alinha os botões de troca com o botão de produção */
-.robotron-controle-producao {
-    display: flex;
-    gap: 15px;
-    align-items: center; /* garante alinhamento vertical */
-    transform: translateY(6px)
-}
-
-.robotron-controle-producao .troca-robo {
-    /* Removi o transform inválido e padronizei tamanho/padding para combinar com .producao */
-    font-size: 2em;
-    padding: 0.2em 1em;
-    background: var(--main-branco);
-    border: 3px solid var(--main-branco);
-    color: var(--main-preto);
-    clip-path: polygon(100% 0, 100% calc(100% - 30px), calc(100% - 30px) 100%, 0 100%, 0 0);
-    cursor: pointer;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    line-height: 1;
-    margin: 26px;
-}
-
-.robotron-controle-producao .troca-robo:hover {
-    background: #222;
-    color: var(--main-branco);
-    border-color: var(--main-branco);
-}
