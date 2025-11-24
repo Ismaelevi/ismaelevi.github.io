@@ -1,1 +1,36 @@
+<body>
+    <form>
+    <div class='container'>
+     <div class='esquerda'>
+      <label>Nome completo: </label>
+      <input type='text' id='txtNomeCompleto' placeholder='Digite seu nome'>
+     </div>
+      <button type='button' onClick='separacao()' id='botao'>>></button>
+<div class='direita'>
+      <label>Nome: </label>
+      <input type='text' id='txtNome'>
 
+      <label>Sobrenome: </label>
+      <input type='text' id='txtSobrenome'>
+    </div>
+    </div>
+    </form>
+<script>
+  function separacao(){
+   let nome = document.getElementById('txtNomeCompleto').value;
+   let indiceEspaço = nome.indexOf(' ');
+
+    if(indiceEspaço === -1) {
+      console.log('por favor, digite um nome válido')
+      return
+    }
+
+   let primeiroNome = nome.substring(0, indiceEspaço);
+   document.getElementById('txtNome').value = primeiroNome;
+
+   let sobrenome = nome.substring(indiceEspaço + 1);
+   document.getElementById('txtSobrenome').value = sobrenome;
+  }
+</script>
+       
+  </body>
