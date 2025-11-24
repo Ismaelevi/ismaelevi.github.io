@@ -75,3 +75,56 @@ const pecas = {
         "velocidade": 0
     }
 }
+
+controles.forEach( (elemento) => {
+  elemento.addEventListener("click", (evento) => {
+
+    const operacao = evento.currentTarget.dataset.controle;
+    const controlePai = evento.currentTarget.parentNode;
+    const peca = evento.currentTarget.dataset.peca;
+
+    manipulaDados(operacao, controlePai, peca);
+  })
+})
+
+function manipulaDados(operacao, controle, peca) {
+  const pecaContador = controle.querySelector('[data-contador]');
+  let valorAtual = parseInt(pecaContador.value);
+
+if (operacao === '-') {
+  
+   if (valorAtual > 0) {
+    valorAtual = valorAtual - 1;
+    pecaContador.value = formatarValor(valorAtual)
+    atualizaEstatisticas(peca, '-'); 
+  }
+} else {
+
+  if (valorAtual < 10) {
+    valorAtual = valorAtual + 1;
+    pecaContador.value = formatarValor(valorAtual);
+    atualizaEstatisticas(peca, '+');
+  }
+}
+  
+function atualizaEstatisticas (peca, operacao) {
+  estatisticas.forEach( (elemento) => {
+    const item = elemento.dataset.estatistica;
+    const valorAtual = parseInt(elemento.textContent);
+    const valorDaPeca = pecas[peca][item];
+
+    if (operacao === '+') {
+      elemenot.textContent = valorAtual + valorDaPeca;
+    } else {
+      elemento.textContent = valorAtual - valorDaPeca;
+    }
+  } )
+}
+
+function formatarValor(valor) {
+  if (valor < 10) {
+    return '0' + valor;
+  }
+  return valor;
+}  
+}
