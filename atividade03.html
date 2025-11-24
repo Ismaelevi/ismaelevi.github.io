@@ -1,77 +1,109 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/jpg" href="img/favicon.ico"/>
     <title>Robotron 2000</title>
 
-    <style>
-        body {
-            background: #f4f4f4;
-            font-family: Arial, sans-serif;
-            text-align: center;
-            padding: 20px;
-        }
-
-        h1 {
-            color: #333;
-        }
-
-        .container {
-            background: white;
-            padding: 20px;
-            width: 340px;
-            margin: auto;
-            border-radius: 10px;
-            box-shadow: 0 0 10px #0002;
-        }
-
-        img {
-            width: 260px;
-        }
-
-        button {
-            margin: 10px;
-            padding: 10px 18px;
-            font-size: 20px;
-            cursor: pointer;
-        }
-    </style>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Teko:wght@300;500&display=swap" rel="stylesheet"> 
 </head>
 <body>
+    <main>
+        <section class="robotron">
+            <img class="robo" src="img/robotron.png" alt="Robotron">
+            <figcaption class="titulo">ROBOTRON <br>2000</figcaption>
+        </section>
 
-    <h1>Robotron 2000 – Trocar Cor</h1>
+        <section class="box estatisticas">
+            <div class="estatistica">
+                <p class="estatistica-titulo">Força</p>
+                <div class="estatistica-valor">
+                    <p class="estatistica-numero">768</p>
+                </div>
+            </div>
+            <div class="estatistica">
+                <p class="estatistica-titulo">Poder</p>
+                <div class="estatistica-valor">
+                    <p class="estatistica-numero">630</p>
+                </div>
+            </div>
+            <div class="estatistica">
+                <p class="estatistica-titulo">Energia</p>
+                <div class="estatistica-valor">
+                    <p class="estatistica-numero">289</p>
+                </div>
+            </div>
+            <div class="estatistica">
+                <p class="estatistica-titulo">Velocidade</p>
+                <div class="estatistica-valor">
+                    <p class="estatistica-numero">597</p>
+                </div>
+            </div>
+        </section>
 
-    <div class="container">
-        <img id="robotron" src="img/robotron-amarelo.png">
-
-        <div>
-            <button onclick="trocarCor(-1)">&lt;</button>
-            <button onclick="trocarCor(1)">&gt;</button>
-        </div>
-    </div>
-
-    <script>
-        // Lista das imagens do robô
-        const cores = [
-            "robotron-amarelo.png",
-            "robotron-azul.png",
-            "robotron-branco.png",
-            "robotron-preto.png",
-            "robotron-rosa.png",
-            "robotron-vermelho.png"
-        ];
-
-        let indice = 0;
-
-        function trocarCor(direcao) {
-            indice += direcao;
-
-            if (indice < 0) indice = cores.length - 1;
-            if (indice >= cores.length) indice = 0;
-
-            document.getElementById("robotron").src = "img/" + cores[indice];
-        }
-    </script>
-
+        <section class="equipamentos">
+            <form action="" class="montador">
+                <div class="box montador-conteudo">
+                    <div class="peca">
+                        <label for="" class="peca-titulo">Braços</label>
+                        <div class="controle">
+                            <button type='button' data-controle='-' data-peca='braco' class="controle-ajuste">-</button>
+                            <input type="text" class="controle-contador" value="00" data-contador readonly>
+                            <button type='button' data-controle='+' data-peca='braco' class="controle-ajuste">+</button>
+                        </div>
+                    </div>
+                    <hr class="linha">
+                    <div class="peca">
+                        <label for="" class="peca-titulo">Blindagem</label>
+                        <div class="controle">
+                            <button type='button' data-controle='-' data-peca='blindagem' class="controle-ajuste">-</button>
+                            <input type="text" class="controle-contador" value="00" data-contador readonly>
+                            <button type='button' data-controle='+' data-peca='blindagem' class="controle-ajuste">+</button>
+                        </div>
+                    </div>
+                    <hr class="linha">
+                    <div class="peca">
+                        <label for="" class="peca-titulo">Núcleos</label>
+                        <div class="controle">
+                            <button type='button' data-controle='-' data-peca='nucleos' class="controle-ajuste">-</button>
+                            <input type="text" class="controle-contador" value="00" data-contador readonly>
+                            <button type='button' data-controle='+' data-peca='nucleos' class="controle-ajuste">+</button>
+                        </div>
+                    </div>
+                    <hr class="linha">
+                    <div class="peca">
+                        <label for="" class="peca-titulo">Pernas</label>
+                        <div class="controle">
+                            <button type='button' data-controle='-' data-peca='pernas' class="controle-ajuste">-</button>
+                            <input type="text" class="controle-contador" value="00" data-contador readonly>
+                            <button type='button' data-controle='+' data-peca='pernas' class="controle-ajuste">+</button>
+                        </div>
+                    </div>
+                    <hr class="linha">
+                    <div class="peca">
+                        <label for="" class="peca-titulo">Foguetes</label>
+                        <div class="controle">
+                            <button type='button' data-controle='-' data-peca='foguetes' class="controle-ajuste">-</button>
+                            <input type="text" class="controle-contador" value="00" data-contador readonly>
+                            <button type='button' data-controle='+' data-peca='foguetes' class="controle-ajuste">+</button>
+                        </div>
+                    </div>
+                </div>
+                <div class='producao-container'>
+                <input type="submit" value="Iniciar produção" class="producao" id="producao">
+                <div class='robotron-controle-producao'>
+                    <button type='button' class='troca-robo' id='robo-anterior' arial-label='Robô anterior'>&lt;</button>
+                    <button type='button' class='troca-robo' id='robo-proximo' arial-label='Próximo robô'>&gt;</button>
+                </div>
+                </div>    
+            </form>
+        </section>
+    </main>
+    <script src='main/main.js?v=2'></script>
 </body>
 </html>
