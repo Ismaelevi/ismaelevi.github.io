@@ -1,0 +1,712 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet">
+    
+    <title>L'Instant Parisien | Bistrô Francês (IFAL Edição)</title>
+
+   <style>
+    :root {
+        --bs-primary: #1E8449; 
+        --bs-secondary: #581845;
+        --bs-link-color: #581845;
+        --bs-link-hover-color: #900C3F;
+        --background-cream: #FAF9F6;
+    }
+    
+    body {
+        background-color: var(--background-cream);
+    }
+
+    .bg-light {
+        background-color: var(--background-cream) !important;
+    }
+
+    .navbar-light.bg-white {
+        background-color: #FFFFFF !important;
+    }
+    
+    .navbar-brand {
+        font-family: 'Georgia', serif; 
+        font-weight: bold;
+        color: var(--bs-primary) !important; 
+        font-size: 1.5rem;
+    }
+    
+    .text-french {
+        color: var(--bs-secondary) !important; 
+    }
+
+    .btn-primary, .bg-primary, .badge.bg-primary, .card-header.bg-primary {
+        background-color: var(--bs-primary) !important;
+        border-color: var(--bs-primary) !important;
+    }
+
+    .btn-outline-primary {
+        color: var(--bs-primary) !important;
+        border-color: var(--bs-primary) !important;
+    }
+
+    .nav-tabs .nav-link.active {
+        color: var(--bs-secondary) !important;
+        border-color: var(--bs-primary) var(--bs-primary) transparent !important;
+    }
+
+    .list-group-item:hover {
+        background-color: #f0f0e8;
+    }
+
+</style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">🇫🇷 L'Instant Parisien</a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="menuNavbar">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#inicio">Início</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#cardapio">Cardápio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#sobre">Sobre Nós</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="#reservas">Reservas (CRUD)</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#galeria">Galeria</a></li>
+                    <li class="nav-item"><a class="nav-link btn btn-primary btn-sm ms-lg-2" href="#pedidos">Pedidos</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section id="inicio" class="py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6 mb-4 mb-md-0">
+                    <h1 class="display-5 fw-bold text-french">Uma Viagem a Paris.</h1>
+                    <p class="lead">
+                        Bem-vindo ao L'Instant Parisien. Um autêntico bistrô francês.
+                        Saboreie clássicos como Coq au Vin e Crème brûlée em um ambiente romântico.
+                    </p>
+                    <a href="#reservas" class="btn btn-primary btn-lg me-2">Faire une Réservation</a>
+                    <a href="#cardapio" class="btn btn-outline-secondary btn-lg">Ver o Menu</a>
+                </div>
+
+                <div class="col-md-6">
+                    <div id="carouselDestaque" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner rounded shadow-lg">
+                            <div class="carousel-item active">
+                                <img src="image/f0aed489d40379171f5c25c3994bbb24.jpg" class="d-block w-100" alt="Interior do Bistrô">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="image/Confit-de-pato-com-uvas-nov-20_0.jpg" class="d-block w-100" alt="Prato de Pato Confit">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="image/1-capa.jpg" class="d-block w-100" alt="Fachada do Restaurante">
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselDestaque" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselDestaque" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <h3 class="h4 mt-5 mb-3 text-center text-french">Horaires d'Ouverture (Horários)</h3>
+            <div class="row justify-content-center">
+                <div class="col-md-8 col-lg-6">
+                    <div class="card shadow-sm">
+                        <div class="card-header bg-primary text-white text-center">
+                            Detalhes de Funcionamento Semanal
+                        </div>
+                        <div class="card-body p-0">
+                            <table class="table table-bordered table-striped table-hover mb-0 text-center">
+                                <thead class="table-light">
+                                    <tr><th>Dia da Semana</th><th>Horário</th></tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td>Terça - Sexta</td><td>19:00 - 23:00</td></tr>
+                                    <tr><td>Sábado</td><td>12:00 - 15:00 & 19:00 - 00:00</td></tr>
+                                    <tr class="table-danger"><td>Domingo/Segunda</td><td>Fechado</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="cardapio" class="bg-light py-5 border-top">
+        <div class="container">
+            <h2 class="mb-4 text-center">Le Menu (Cardápio)</h2>
+            
+            <ul class="nav nav-tabs justify-content-center" id="cardapioTabs" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active text-french" id="tab-principais" data-bs-toggle="tab" data-bs-target="#principais" type="button" role="tab">Plats principaux</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link text-french" id="tab-entradas" data-bs-toggle="tab" data-bs-target="#entradas" type="button" role="tab">Entrées</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link text-french" id="tab-sobremesas" data-bs-toggle="tab" data-bs-target="#sobremesas" type="button" role="tab">Desserts</button>
+                </li>
+            </ul>
+
+            <div class="tab-content mt-4">
+                
+                <div class="tab-pane fade show active" id="principais" role="tabpanel">
+                    <div class="row g-4">
+                        <div class="col-12 col-md-6 col-lg-4">
+                            <div class="card h-100 shadow-sm">
+                                <img src="c:\Users\i2025304215\Downloads\98ba18c9-11b0-4940-8c76-5b871fed2984-e1595623709487.jpg" class="card-img-top" alt="Pato Confit">
+                                <div class="card-body">
+                                    <h5 class="card-title">Canard Confit (Pato)
+                                        <span class="badge bg-primary ms-2">Chef Recomenda</span>
+                                    </h5>
+                                    <p class="card-text">Pato confitado em sua própria gordura, servido com batatas gratinadas e molho de vinho tinto.</p>
+                                    <h6 class="text-french">R$ 95,00</h6>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-12 col-md-6 col-lg-4">
+                            <div class="card h-100 shadow-sm">
+                                <img src="c:\Users\i2025304215\Downloads\file.jpg" class="card-img-top" alt="Filé Mignon">
+                                <div class="card-body">
+                                    <h5 class="card-title">Filet Mignon au Poivre</h5>
+                                    <p class="card-text">Filé mignon grelhado, acompanhado de um rico molho de pimenta verde e pommes frites.</p>
+                                    <h6 class="text-french">R$ 88,00</h6>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-12 col-md-6 col-lg-4">
+                            <div class="card h-100 shadow-sm">
+                                <img src="c:\Users\i2025304215\Downloads\sopa-de-peixe_1200x800.jpg" class="card-img-top" alt="Sopa de Peixe">
+                                <div class="card-body">
+                                    <h5 class="card-title">Bouillabaisse (Sopa de Peixe)</h5>
+                                    <p class="card-text">Clássica sopa de peixes e frutos do mar da Provença, servida com rouille e pão torrado.</p>
+                                    <h6 class="text-french">R$ 75,00</h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab-pane fade" id="entradas" role="tabpanel">
+                    <div class="list-group shadow-sm">
+                        <div class="list-group-item d-flex justify-content-between align-items-center">
+                            <div>
+                                <h5>Soupe à l'Oignon (Sopa de Cebola)</h5>
+                                <p class="mb-1 text-muted">Sopa de cebola gratinada com queijo Gruyère e croûtons.</p>
+                            </div>
+                            <span class="fw-bold text-french">R$ 32,00</span>
+                        </div>
+                        <div class="list-group-item d-flex justify-content-between align-items-center">
+                            <div>
+                                <h5>Escargots de Bourgogne</h5>
+                                <p class="mb-1 text-muted">Caracóis frescos em manteiga de alho e salsinha, servidos com pão.</p>
+                            </div>
+                            <span class="fw-bold text-french">R$ 45,00</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="tab-pane fade" id="sobremesas" role="tabpanel">
+                    <div class="row g-4">
+                        <div class="col-md-6">
+                            <div class="card h-100 shadow-sm">
+                                <div class="card-body">
+                                    <h5 class="card-title">Crème brûlée</h5>
+                                    <p class="card-text">Creme de baunilha com crosta de açúcar queimado. O clássico inconfundível.</p>
+                                    <h6 class="text-french">R$ 28,00</h6>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card h-100 shadow-sm">
+                                <div class="card-body">
+                                    <h5 class="card-title">Mousse au Chocolat</h5>
+                                    <p class="card-text">Mousse de chocolate amargo, leve e aerada, feita à moda tradicional.</p>
+                                    <h6 class="text-french">R$ 26,00</h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    
+    <section id="sobre" class="py-5 border-top">
+        <div class="container">
+            <h2 class="mb-4 text-center">À Propos de Nous (Sobre Nós)</h2>
+            
+            <h3 class="h5 mt-3 text-french"> Nossa História e Ambiente</h3>
+            <p>
+                O L'Instant Parisien foi fundado em 2018 pelo casal Marie e Louis, que trouxeram a autêntica
+                experiência dos bistrôs de Saint-Germain-des-Prés diretamente para Maceió.
+                Nossa missão é oferecer uma culinária francesa fiel, com ingredientes de alta qualidade, em um
+                ambiente elegante e acolhedor.
+            </p>
+
+            <h3 class="h5 mt-4 text-french"> Perfil do Chef</h3>
+            <div class="row align-items-center mb-4">
+                <div class="col-md-3">
+                    <img src="c:\Users\i2025304215\Downloads\54297476685_c92e09c1f8_k-615x461.jpg" class="img-fluid rounded-circle shadow-sm" alt="Chef Louis Martin (Jacquin)">
+                </div>
+                <div class="col-md-9">
+                    <p class="lead fw-bold mb-1">Chef Erick Jacquin</p>
+                    <p>Originário de  Saint-Amand-Montrond, o Chef Jacquin possui formação na École Supérieure de Cuisine Française.
+                        Sua paixão são os clássicos, especialmente as carnes e os molhos tradicionais, que ele executa com maestria
+                        e um toque moderno.
+                    </p>
+                </div>
+            </div>
+
+            <h3 class="h5 mt-4 text-french"> Consultor Culinário</h3>
+            <div class="row align-items-center mb-4">
+                <div class="col-md-3">
+                    <img src="c:\Users\i2025304215\Downloads\images.jpg" class="img-fluid rounded-circle shadow-sm" alt="Consultor Culinário Remy">
+                </div>
+                <div class="col-md-9">
+                    <p class="lead fw-bold mb-1">Remy (A Rata-Touille)</p>
+                    <p>Nosso consultor discreto, mas crucial. Responsável pelos toques de inspiração e pelo
+                        controle de qualidade dos molhos. Ele assegura que cada prato tenha "Le Goût" (O Sabor) autêntico.</p>
+                </div>
+            </div>
+
+
+            <h3 class="h5 mt-4 text-french"> Reconhecimentos</h3>
+            <ul class="list-group list-group-flush shadow-sm">
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    Prêmio Sabor Brasil - Categoria Bistrô Clássico (2024)
+                    <span class="badge bg-primary rounded-pill">Ouro</span>
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    Destaque Guia 4 Rodas Maceió
+                    <span class="badge bg-primary rounded-pill">Melhor Francês</span>
+                </li>
+            </ul>
+        </div>
+    </section>
+    
+    <section id="reservas" class="bg-light py-5 border-top">
+        <div class="container">
+            <h2 class="mb-4 text-center">Réservez Votre Table (Reservas CRUD)</h2>
+            
+            <div class="row">
+                <div class="col-12 col-md-4 mb-4">
+                    <div class="card shadow-lg border-primary">
+                        <div class="card-header bg-primary text-white">
+                            Registro de Reserva
+                        </div>
+                        <div class="card-body">
+                            <form id="form-reserva">
+                                <input type="hidden" id="reserva-id">
+                                <div class="mb-3">
+                                    <label for="nome" class="form-label">Nome</label>
+                                    <input type="text" id="nome" class="form-control" placeholder="Nome Completo" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="data" class="form-label">Data</label>
+                                    <input type="date" id="data" class="form-control" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="hora" class="form-label">Horário</label>
+                                    <input type="time" id="hora" class="form-control" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="pessoas" class="form-label">Pessoas</label>
+                                    <select id="pessoas" class="form-select" required>
+                                        <option value="">Selecione...</option>
+                                        <option>2 Pessoas</option>
+                                        <option>4 Pessoas</option>
+                                        <option>Mais de 5</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="d-grid mt-4">
+                                    <button type="submit" class="btn btn-primary btn-submit">
+                                        Salvar Reserva
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-8">
+                    <div class="card shadow-lg">
+                        <div class="card-header d-flex justify-content-between align-items-center">
+                            <span>Próximas Reservas</span>
+                            <span class="badge bg-secondary" id="total-reservas">Total: 3</span>
+                        </div>
+                        <div class="card-body p-0">
+                            <div class="table-responsive">
+                                <table class="table table-striped table-hover mb-0">
+                                    <thead class="table-light">
+                                        <tr>
+                                            <th>#</th>
+                                            <th>Nome</th>
+                                            <th>Data</th>
+                                            <th>Horário</th>
+                                            <th>Grupo</th>
+                                            <th class="text-end">Ações</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="tabela-reservas">
+                                        <tr>
+                                            <td>1</td>
+                                            <td>Ana Silva</td>
+                                            <td>2025-12-25</td>
+                                            <td>20:00</td>
+                                            <td>2 Pessoas</td>
+                                            <td class="text-end">
+                                                <button class="btn btn-sm btn-warning btn-edit">Editar</button>
+                                                <button class="btn btn-sm btn-danger btn-delete">Excluir</button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>2</td>
+                                            <td>Bruno Lima</td>
+                                            <td>2025-12-28</td>
+                                            <td>21:30</td>
+                                            <td>4 Pessoas</td>
+                                            <td class="text-end">
+                                                <button class="btn btn-sm btn-warning btn-edit">Editar</button>
+                                                <button class="btn btn-sm btn-danger btn-delete">Excluir</button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>3</td>
+                                            <td>Carla Souza</td>
+                                            <td>2026-01-05</td>
+                                            <td>19:00</td>
+                                            <td>Mais de 5</td>
+                                            <td class="text-end">
+                                                <button class="btn btn-sm btn-warning btn-edit">Editar</button>
+                                                <button class="btn btn-sm btn-danger btn-delete">Excluir</button>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> <h3 class="h5 mt-5 mb-3 text-center text-french">Política de Reservas</h3>
+            <div class="accordion accordion-flush" id="politicaAccordion">
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
+                            Código de Vestimenta (Dress Code)
+                        </button>
+                    </h2>
+                    <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#politicaAccordion">
+                        <div class="accordion-body">É sugerido o uso de traje Esporte Fino para manter a elegância do ambiente.</div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
+                            Pagamento Antecipado para Grupos
+                        </button>
+                    </h2>
+                    <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#politicaAccordion">
+                        <div class="accordion-body">Reservas para grupos acima de 6 pessoas requerem um depósito de 20% do valor estimado.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="galeria" class="py-5 border-top">
+        <div class="container">
+            <h2 class="mb-4 text-center">La Galerie & Avis (Galeria e Avaliações)</h2>
+            
+            <h3 class="h5 mb-3 text-french">Nossos Momentos</h3>
+            <div class="row g-3 mb-5">
+                <div class="col-lg-4 col-md-6"><img src="image/f0aed489d40379171f5c25c3994bbb24.jpg" class="img-fluid rounded shadow-sm" alt="Ambiente Interno"></div>
+                <div class="col-lg-4 col-md-6"><img src="image/61W135pxGTL._AC_UF894,1000_QL80_.jpg" class="img-fluid rounded shadow-sm" alt="Taça de Vinho"></div>
+                <div class="col-lg-4 col-md-6"><img src="image/image/b0a14a6d-6d66-4ed3-8b92-679bdd167152-1-scaled-e1721331663675.jpg" class="img-fluid rounded shadow-sm" alt="Mesa Posta"></div>
+                <div class="col-lg-4 col-md-6"><img src="image/escargots-de-bourgogne.jpg" class="img-fluid rounded shadow-sm" alt="Prato de Entrada"></div>
+                <div class="col-lg-4 col-md-6"><img src="image/81QGw+VJIFL.jpg" class="img-fluid rounded shadow-sm" alt="Detalhe Decoração"></div>
+                <div class="col-lg-4 col-md-6"><img src="image/f_477498.jpg" class="img-fluid rounded shadow-sm" alt="Chef na Cozinha"></div>
+            </div>
+
+            <h3 class="h5 mb-4 text-french">Avaliações de Clientes</h3>
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="card text-center p-3 shadow-sm">
+                        <div class="card-body">
+                            <h4 class="text-warning">★★★★★</h4>
+                            <p class="card-text">"Sentimo-nos transportados para um bistrô em Paris. O Coq au Vin estava divino e o serviço impecável."</p>
+                            <footer class="blockquote-footer mt-2">Isabella Fontes, <cite title="Source Title">Reserva Confirmada</cite></footer>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card text-center p-3 shadow-sm">
+                        <div class="card-body">
+                            <h4 class="text-warning">★★★★★</h4>
+                            <p class="card-text">"Local perfeito para celebrar datas especiais. A carta de vinhos é excelente. Recomendo o Crème brûlée."</p>
+                            <footer class="blockquote-footer mt-2">Ricardo Almeida, <cite title="Source Title">Guia Gastronômico</cite></footer>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+   <section id="contato" class="bg-light py-5 border-top">
+        <div class="container">
+            <h2 class="mb-4 text-center">Contactez-Nous (Fale Conosco)</h2>
+
+            <div class="row g-5">
+                
+                <div class="col-md-6">
+                    <h3 class="h5 mb-3 text-french">Informações e Localização</h3>
+                    <ul class="list-unstyled">
+                        <li> Endereço: Av. França, 580 - Pajuçara, Maceió/AL</li>
+                        <li> Telefone: (82) 3555-1234</li>
+                        <li> E-mail: reservation@linstantparisien.com</li>
+                    </ul>
+                    <hr>
+                    <p class="fw-bold">Nosso Horário de Jantar:</p>
+                    <p>Terça a Sábado: 19:00h às 23:00h</p>
+                    
+                    <div class="ratio ratio-4x3 mt-4 shadow-sm">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15668.045610815102!2d-35.7058564!3d-9.664421!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x701460368b64e0f%3A0x6281cc1317769534!2sPaju%C3%A7ara%2C%20Macei%C3%B3%20-%20AL!5e0!3m2!1spt-BR!2sbr!4v1709210000000!5m2!1spt-BR!2sbr" 
+                            width="600" 
+                            height="450" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade"
+                            title="Localização do L'Instant Parisien em Pajuçara, Maceió"
+                        ></iframe>
+                    </div>
+                </div>
+                
+                <div class="col-md-6">
+                    <h3 class="h5 mb-3 text-french">Envie-nos uma Mensagem</h3>
+                    <form>
+                        <div class="mb-3">
+                            <label for="contatoNome" class="form-label">Nome</label>
+                            <input type="text" class="form-control" id="contatoNome" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="contatoEmail" class="form-label">E-mail</label>
+                            <input type="email" class="form-control" id="contatoEmail" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="contatoAssunto" class="form-label">Assunto</label>
+                            <input type="text" class="form-control" id="contatoAssunto" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="contatoMensagem" class="form-label">Mensagem</label>
+                            <textarea class="form-control" id="contatoMensagem" rows="4" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Envoyer (Enviar)</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="pedidos" class="py-5 border-top">
+        <div class="container">
+            <h2 class="mb-4 text-center">Commandes en Ligne & Offres (Pedidos e Ofertas)</h2>
+
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <h3 class="h5 mb-3 text-french">Como Pedir</h3>
+                    <div class="alert alert-primary d-flex align-items-center" role="alert">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-bag me-2" viewBox="0 0 16 16">
+                           <path d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1zm3.5 3h1.5a1.5 1.5 0 0 1 1.5 1.5v9A1.5 1.5 0 0 1 13 16H3a1.5 1.5 0 0 1-1.5-1.5v-9A1.5 1.5 0 0 1 3 4h1.5v.5a2.5 2.5 0 0 0 5 0V4h1.5z"/>
+                        </svg>
+                        <div>
+                            Oferecemos Retirada no Local. Delivery limitado para garantir a qualidade dos pratos.
+                            <p class="mt-2 mb-0"><a href="#" class="btn btn-sm btn-primary">Pedir no Site</a></p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6">
+                    <h3 class="h5 mb-3 text-french">Oferta Especial</h3>
+                    <div class="alert alert-info" role="alert">
+                        Quarta do Vinho: 20% de desconto em todas as garrafas de vinho tinto da Borgonha. Perfeito para harmonizar seu jantar!
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <h3 class="h5 mb-3 text-french">Áreas de Entrega</h3>
+                    <ul class="list-group shadow-sm">
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            Pajuçara, Ponta Verde
+                            <span class="badge bg-secondary">30-45 min</span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            Jatiúca
+                            <span class="badge bg-secondary">45-60 min</span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            Outras Áreas (Apenas Retirada)
+                            <span class="badge bg-danger">Indisponível</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-6">
+                    <h3 class="h5 mb-3 text-french">Redes Sociais e Avaliações</h3>
+                    <ul class="list-group mb-4 shadow-sm">
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            Google Avaliações (4.8/5.0)
+                            <a href="#" class="btn btn-outline-primary btn-sm">Avaliar</a>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            Guia Sabores do Mundo (5/5)
+                            <a href="#" class="btn btn-outline-primary btn-sm">Ver Guia</a>
+                        </li>
+                    </ul>
+                    <a href="#" class="btn btn-outline-dark me-2">Facebook</a>
+                    <a href="#" class="btn btn-outline-dark me-2">Instagram</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <footer class="bg-dark text-white text-center py-3">
+        <small>© 2025 L'Instant Parisien - Desenvolvido para Aula IFAL.</small>
+    </footer>
+
+    <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+    </script>
+
+    <script>
+        const form = document.getElementById('form-reserva');
+        const tabela = document.getElementById('tabela-reservas');
+        const btnSubmit = form.querySelector('button[type="submit"]');
+        const totalReservasBadge = document.getElementById('total-reservas');
+        
+        let linhaEditando = null; 
+
+        function limparFormulario() {
+            form.reset();
+            linhaEditando = null;
+            btnSubmit.textContent = 'Salvar Reserva';
+            btnSubmit.classList.remove('btn-warning');
+            btnSubmit.classList.add('btn-primary');
+        }
+
+        function renumerarLinhas() {
+            Array.from(tabela.rows).forEach((tr, i) => {
+                tr.cells[0].textContent = i + 1;
+            });
+            totalReservasBadge.textContent = `Total: ${tabela.rows.length}`;
+        }
+
+        function adicionarLinha(nome, data, hora, pessoas) {
+            const novaLinha = document.createElement('tr');
+
+            novaLinha.innerHTML = `
+                <td></td>
+                <td>${nome}</td>
+                <td>${data}</td>
+                <td>${hora}</td>
+                <td>${pessoas}</td>
+                <td class="text-end">
+                    <button class="btn btn-sm btn-warning btn-edit">Editar</button>
+                    <button class="btn btn-sm btn-danger btn-delete">Excluir</button>
+                </td>
+            `;
+
+            tabela.appendChild(novaLinha);
+            renumerarLinhas();
+        }
+
+        form.addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            const nome = document.getElementById('nome').value.trim();
+            const data = document.getElementById('data').value.trim();
+            const hora = document.getElementById('hora').value.trim();
+            const pessoas = document.getElementById('pessoas').value.trim();
+
+            if (!nome || !data || !hora || !pessoas || pessoas === "") {
+                alert('Preencha todos os campos da reserva!');
+                return;
+            }
+
+            if (linhaEditando === null) {
+                
+                adicionarLinha(nome, data, hora, pessoas);
+            } else {
+
+                linhaEditando.cells[1].textContent = nome;
+                linhaEditando.cells[2].textContent = data;
+                linhaEditando.cells[3].textContent = hora;
+                linhaEditando.cells[4].textContent = pessoas;
+                alert(`Reserva de ${nome} atualizada com sucesso!`);
+                limparFormulario();
+            }
+        });
+
+        tabela.addEventListener('click', function (event) {
+            const botao = event.target.closest('button');
+            if (!botao) return;
+
+            const linha = botao.closest('tr');
+
+            if (botao.classList.contains('btn-delete')) {
+                if (confirm(`Tem certeza que deseja cancelar a reserva de ${linha.cells[1].textContent}?`)) {
+                    
+                    if (linha === linhaEditando) {
+                        limparFormulario();
+                    }
+                    linha.remove();
+                    renumerarLinhas();
+                }
+            }
+
+            if (botao.classList.contains('btn-edit')) {
+                const nome = linha.cells[1].textContent;
+                const data = linha.cells[2].textContent;
+                const hora = linha.cells[3].textContent;
+                const pessoas = linha.cells[4].textContent;
+
+                document.getElementById('nome').value = nome;
+                document.getElementById('data').value = data;
+                document.getElementById('hora').value = hora;
+                document.getElementById('pessoas').value = pessoas;
+
+                linhaEditando = linha;
+                btnSubmit.textContent = 'Atualizar Reserva';
+                btnSubmit.classList.remove('btn-primary');
+                btnSubmit.classList.add('btn-warning');
+                document.getElementById('nome').focus();
+            }
+        });
+
+        document.addEventListener('DOMContentLoaded', renumerarLinhas);
+    </script>
+</body>
+</html>
